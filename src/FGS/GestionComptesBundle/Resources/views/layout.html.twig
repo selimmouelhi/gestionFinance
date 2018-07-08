@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		{% block meta %}
+		{%  include 'header/meta.html.twig' %}
+	 	{% endblock %}
+	 	
+	 	{%  include 'header/favicon.html.twig' %}
+	 	
+		<title>{% block title %}Gestion Comptes{% endblock %}</title>
+
+		{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/layout.css') }}">
+		{% endblock %}
+	</head>
+
+	<body>		
+		{{ include('FGSGestionComptesBundle:Utils:menu.html.twig') }}
+		
+		{% block modal %}
+		{% endblock %}
+		  
+		<div class='container-fluid aeration'>
+			<noscript  class="text-justify alert alert-warning alert-dismissible fade in" role="alert">
+				<p>Oups il semblerait que vous n'avez pas activé <strong>JavaScript</strong> sur votre navigateur. Cela risque de dégrader votre expérience utilisateur</p>
+				<p>pour savoir comment activer JavaScript : <a href ='http://www.enable-javascript.com/fr/'>cliquez sur ce lien</a></p>
+			</noscript>
+		{% for message in app.session.flashbag.get("success") %}
+			<div class="alert alert-success alert-dismissible fade in" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				<span class="glyphicon glyphicon-ok"></span> {{ message }}
+			</div>
+		{% endfor %}
+		
+		{% for message in app.session.flashbag.get("error") %}
+			<div class="alert alert-danger alert-dismissible fade in" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				<span class="glyphicon glyphicon-warning-sign"></span> {{ message }}
+			</div>
+		{% endfor %}
+		
+		{% block contenu %}
+		{% endblock %}
+		</div>
+		
+		{% block javascripts %}
+		<script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+		{% endblock %}
+	</body>
+</html>

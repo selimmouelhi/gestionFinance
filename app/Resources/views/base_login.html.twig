@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		{% block meta %}
+		{%  include 'header/meta.html.twig' %}
+	 	{% endblock %}
+	 	
+	 	{%  include 'header/favicon.html.twig' %}
+		
+		<title>{% block title %}{% endblock %}</title>
+
+		{% block stylesheets %}
+		<link href='{{ asset('css/bootstrap.min.css') }}' rel='stylesheet' type='text/css' />
+		<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+		<link href='{{ asset('css/social-icon.css') }}' rel='stylesheet' type='text/css' />
+		<link href='{{ asset('css/base_login.css') }}' rel='stylesheet' type='text/css' />
+		{% endblock %}
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top transparent" id="menu_top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="{{ path('fgs_gestion_comptes_homepage') }}">
+						<img alt="JMLESSOUS" src="{{ asset('img/icone.png') }}" id="logo"> JMLESSOUS
+					</a>
+				</div>
+				<a href="https://www.facebook.com/mapetitetirelirefr/" target="facebook" class="navbar-text navbar-right"><span class="icon icon-facebook"></span></a>
+			</div>
+		</nav>
+
+		{% block contenu %}
+		{% endblock %}
+
+		{% block javascripts %}
+			<script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+			<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+			<script src="{{ asset('js/navigation-dot-right.js') }}"></script>
+		{% endblock %}
+
+	</body>
+</html>

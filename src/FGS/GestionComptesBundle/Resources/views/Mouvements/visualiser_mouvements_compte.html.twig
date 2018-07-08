@@ -1,0 +1,68 @@
+{% set paginationMax 	= (maxMouvementFinanciers/(longueur))|round(0,'ceil') %}
+{% set paginationAct	= ((positionActuelle+longueur)/longueur)|round(0,'floor') %}
+					
+{% extends "FGSGestionComptesBundle::layout.html.twig" %}
+
+{% block title %}Visualisation des données d'un compte{% endblock %}
+
+{% block contenu %}
+	<div class='row'>
+		<div class='col-xs-12, col-md-4'>
+			<canvas id="canvas-categorie-totaux" width="2" height="1"/>
+		</div>
+		<div class='col-xs-12, col-md-6'>
+
+		</div>
+	</div>
+	
+	<div class='row'>
+		<div class="col-md-1 col-xs-2" class="height: 38px;">
+			<img src="{{ asset('img/'~compte.banque.urlImage) }}" class='logo-compte' />
+		</div>
+		<div class="col-md-11 col-xs-10">
+			<h1>{{ compte.nom }}<span class="label {{ compte.montantActuel < 0 ? 'label-danger':'label-success' }} pull-right">{{ compte.montantActuel|number_format(2, ',', ' ') }} €</span></h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-6 col-md-3 col-xs-12">
+			<a href="{{ path('fgs_gestion_comptes_visualiser_mouvement_financier_compte_mois',{'id':id}) }}" class="btn btn-primary btn-block">
+				<span class='glyphicon glyphicon-calendar'></span> Visualisation du mois en cours
+			</a>
+		</div>
+		<div class="col-md-3 col-xs-12">
+			<a href="{{ path('fgs_gestion_comptes_visualiser_mouvement_financier_compte_annee',{'id':id}) }}" class="btn btn-primary btn-block">
+				<span class='glyphicon glyphicon-calendar'></span> Visualisation de l'année en cours</a>
+		</div>
+	</div>	
+
+	{% if compte.mouvementFinanciers is not empty %}
+		{{ include('FGSGestionComptesBundle:Utils:tableau_mouvement_financier.html.twig', { 'liste_mouvement_financier' : compte.mouvementFinanciers, 'caption_top':'Visualisation de vos dernières opérations (page '~paginationAct~' / '~paginationMax~')' }) }}
+		
+		<div class='text-center'>
+			<nav>
+				<ul class="pagination">
+					{% for i in 1..paginationMax %}
+						<li class="{{ paginationAct == i ? 'active'}}"><a href="{{ path('fgs_gestion_comptes_visualiser_mouvement_financier_compte', {'id':id, 'debut':(((i-1)*longueur)), 'longueur':longueur}) }}">{{ i }} <span class="sr-only">(current)</span></a></li>
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	{% else %}
+		<p class='well well-sm' style='background-color:#fff; margin-top: 10px;'>Aucune transaction n'a encore été réalisé sur ce compte<p>
+	{% endif %}
+
+	{{- render(controller('FGSGestionComptesBundle:Mouvements:genererFormsCheckAndDelete')) -}}
+{% endblock %}
+
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/iconset/daily-life.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/mouvements/visualiser_mouvements_compte.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src='{{ asset('bundles/fgsgestioncomptes/js/activate-tooltip.js') }}'></script>
+<script src='{{ asset('bundles/fgsgestioncomptes/js/check-or-delete-mf.js') }}'></script>
+{% endblock %}

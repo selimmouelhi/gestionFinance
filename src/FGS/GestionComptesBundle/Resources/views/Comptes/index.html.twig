@@ -1,0 +1,60 @@
+{% extends "FGSGestionComptesBundle::layout.html.twig" %}
+
+{% block title %}Visualisation de vos comptes{% endblock %}
+
+{% block contenu %}
+	{% for compte in listeComptes %}
+		<div class='col-lg-6'>
+			<div class='panel panel-{{ compte.montantActuel < 0 ? 'danger':'primary' }}'>
+				<div class='panel-heading'>
+					<div class='btn-group pull-right menu-compte'>
+						<a type="button" class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-option-vertical"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="{{ path('fgs_gestion_comptes_visualiser_mouvement_financier_compte', {'id':compte.id}) }}">Visualiser tout les mouvements du comptes </a></li>
+							<li><a href="{{ path('fgs_gestion_comptes_visualiser_mouvement_financier_compte_mois',{'id':compte.id}) }}">Visualisation du mois en cours</a></li>
+							<li><a href="{{ path('fgs_gestion_comptes_visualiser_mouvement_financier_compte_annee',{'id':compte.id}) }}">Visualisation de l'année en cours</a></li>
+						</ul>
+					</div>
+					<h2>
+						<img src="{{ asset('img/'~compte.banque.urlImage) }}" class='logo-compte' sizes="100px"/>
+						<a href="{{ path('fgs_gestion_comptes_visualiser_mouvement_financier_compte', {'id':compte.id}) }}">
+							{{ compte.nom }}
+						</a>
+					</h2>
+					<div class="clearfix"></div>
+				</div>
+				<div class='panel-body'>
+					{% if compte.mouvementFinanciers is not empty %}
+						{{ include('FGSGestionComptesBundle:Utils:tableau_mouvement_financier.html.twig', { 'liste_mouvement_financier' : compte.mouvementFinanciers, 'caption_bottom': 'Vos 2 dernières transactions' }) }}
+					{% else %}
+					<p>Aucune transaction n'a encore été réalisé sur ce compte<p>
+					{% endif %}
+				</div>
+				<div class='panel-footer'>
+					<h3 class=" {{ compte.montantActuel < 0 ? 'text-danger':'text-success' }} text-right">
+						<small>Total : </small>{{ compte.montantActuel|number_format(2, ',', ' ') }} €
+					</h3>
+				</div>
+			</div>
+		</div>
+		{% if loop.index is even %}<div class='clearfix'></div>{%  endif %}
+	{% endfor %}
+	
+	{{- render(controller('FGSGestionComptesBundle:Mouvements:genererFormsCheckAndDelete')) -}}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/iconset/daily-life.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/iconset/daily-life.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/comptes/index.css') }}">
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+<script src='{{ asset('bundles/fgsgestioncomptes/js/activate-tooltip.js') }}'></script>
+<script src='{{ asset('bundles/fgsgestioncomptes/js/check-or-delete-mf.js') }}'></script>
+{% endblock %}

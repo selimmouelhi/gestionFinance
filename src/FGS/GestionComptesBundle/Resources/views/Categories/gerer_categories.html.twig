@@ -1,0 +1,122 @@
+{% extends "FGSGestionComptesBundle::layout.html.twig" %}
+
+
+{% block modal %}
+<div class="modal" id="confirmation">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">x</button>
+			<h4 class="modal-title">Attention</h4>
+			</div>
+			<div class="modal-body">
+			<p>
+				Vous êtes sur le point de supprimer cette Catégorie : <strong id="ma_categorie"></strong> ?
+			</p>
+			<p>
+				Tout les mouvements financiers lié à cette Catégorie seront transféré à la catégorie <strong id="son_parent"></strong>
+			</p>
+			<p>
+				Cette Action ne pourra pas être annulé.
+			</p>
+			</div>
+			<div class="modal-footer">
+			<a class="btn btn-danger" id="valider_suppression" href="#">
+				<span class="glyphicon glyphicon-trash"></span> 
+				Supprimer cette catégorie
+			</a>
+			<a href="" class="btn btn-info" data-dismiss="modal" >
+				Annuler
+			</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% macro generer_enfants(enfants) %}
+<ul class='media-list'>
+	{% for children in enfants %}
+
+	<li class='media'>
+		<div class='media-left'>
+			<div>
+				<span class=' img-circle bg-primary text-center glyphicon {{ children.icone }}'> </span>
+			</div>
+		</div>
+		<div class='media-body'>
+			
+			<div>
+				{{ children.libelle }} 
+				<div class='pull-right' >
+					<a  href="{{ path('fgs_gestion_comptes_modifier_categorie', {"id":children.id}) }}" class="btn btn-info ">
+						<span class="glyphicon glyphicon-pencil"></span><span class='hidden-xs'> Modifier</span>
+					</a>
+					
+					{%- include 'FGSGestionComptesBundle:Categories:delete_button.html.twig' -%}
+					
+					<div class='btn-group'>
+						<a  href="{{ loop.first ? '#' : path('fgs_gestion_comptes_monter_categorie', {'id': children.id}) }}" class="btn btn-success{{ loop.first ? ' disabled'}}">
+							<span class="glyphicon glyphicon-arrow-up"></span>
+						</a>
+						<a  href="{{ loop.last ? '#' :path('fgs_gestion_comptes_descendre_categorie', {'id': children.id}) }}" class="btn btn-success{{ loop.last ? ' disabled'}}">
+							<span class="glyphicon glyphicon-arrow-down"></span>
+						</a>
+					</div>
+					
+				</div>
+				<span></span>
+			</div>
+			{% import _self as macros %}
+			{{ children.childrens is not empty  ? macros.generer_enfants(children.childrens) }}
+
+		</div>
+		
+	</li>
+	{% endfor %}
+</ul>
+{% endmacro %}
+
+
+{% import _self as macros %}
+
+{% block contenu %}
+<h1 class="page-header">Gérer mes catégories</h1>
+
+<div class='row'>
+	<div class='col-md-offset-1 col-md-10'>
+	{% if listeCategories is not empty %}
+		{{ macros.generer_enfants(listeCategories) }}
+	{% else %}
+		<div class="alert alert-warning alert-dismissible fade in" role="alert">
+			<p><span class="glyphicon glyphicon-warning-sign"></span> Vous n'avez pas encore de catégories.</p>
+		</div>
+	{% endif %}
+	</div>
+
+</div>
+<hr class="col-md-10 col-md-offset-1"/>
+	<div class="row">
+		<div class="col-md-offset-9 col-md-2 col-xs-12">
+			<a href="{{ path('fgs_gestion_comptes_ajouter_categorie') }}" class="btn btn-success btn-block">
+				<span class="glyphicon glyphicon-plus"></span> Ajouter
+			</a>
+		</div>
+	</div>
+{{ form(form_delete) }}
+{% endblock %}
+
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/iconset/daily-life.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/categories/gerer.css') }}">
+{% endblock %}
+
+
+
+
+{% block javascripts %}
+{{ parent() }}
+<script src='{{ asset('bundles/fgsgestioncomptes/js/delete-cat-mf.js') }}'></script>
+{% endblock %}

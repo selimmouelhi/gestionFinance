@@ -1,0 +1,42 @@
+{% extends "::base_login.html.twig" %}
+
+{% block title %}JMLESSOUS{% endblock %}
+
+{% block contenu %}
+<section id="intro">
+	<div class="container-fluid">
+		<div class="col-sm-7 presentation">
+			{% block presentation %}
+			<h1>Faites vos comptes en ligne</h1>
+			<p class='text-justify'>JMLESSOUS est une application web vous permettant de faire vos comptes en ligne.<p>
+			<p class='text-justify'>Son but est de vous aider dans la gestion de vos finances et à termes : économiser.</p>
+			{% endblock %}
+		</div>
+		
+		<div class="col-sm-5 form">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					{% block panel_heading %}{% endblock %}
+				</div>
+				<div class="panel-body">
+					<noscript  class="text-justify alert alert-warning alert-dismissible fade in" role="alert">
+						<p>Oups il semblerait que vous n'avez pas activé <strong>JavaScript</strong> sur votre navigateur. Cela risque de dégrader votre expérience utilisateur</p>
+						<p>pour savoir comment activer JavaScript : <a href ='http://www.enable-javascript.com/fr/'>cliquez sur ce lien</a></p>
+					</noscript>
+		    		{% block panel_body %}{% endblock %}
+		    		{% block fos_user_content %}{% endblock %}
+				</div>
+				<div class="panel-footer">
+					{% block panel_footer %}{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock contenu %}
+
+{% block stylesheets %}
+	{{  parent()  }}
+	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+	<link href='{{ asset('bundles/fgsuser/css/layout.css') }}'  rel='stylesheet' type='text/css' />
+{% endblock %}

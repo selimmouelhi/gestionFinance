@@ -1,0 +1,21 @@
+{% extends "FGSGestionComptesBundle::admin.html.twig" %}
+{% block title %}Users{% endblock %}
+{% block big_title %}Reclamations :{% endblock %}
+{% block contenu %}
+    <table class="table">
+        <tr>
+            <th>Image Banque</th>
+            <th>Nom Banque</th>
+            <th>
+        </tr>
+        {% for Banque in Banques %}
+            <tr>
+                <td > <img width="100" height="100" src="{{ asset('img/'~ Banque.urlImage)}}" >
+                </td>
+                <td>{{ Banque.Nom }}</td>
+
+            </tr>
+
+        {% endfor %}
+    </table>
+{% endblock %}

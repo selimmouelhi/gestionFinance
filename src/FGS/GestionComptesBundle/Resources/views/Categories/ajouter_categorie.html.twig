@@ -1,0 +1,35 @@
+{% extends "FGSGestionComptesBundle::layout.html.twig" %}
+	
+{% block contenu %}
+{{ form_start(form) }}
+
+<h1 class="page-header">{% block titre_contenu %}Ajout d'une nouvelle Catégorie{% endblock %}</h1>
+
+<div class='form-group'>
+	{{ form_label(form.libelle,'',{ 'label_attr':{'class':'col-sm-3 col-md-2 col-md-offset-1 control-label'} }) }}
+	<div class='col-sm-8 col-md-6'>
+		<div class='input-group'>
+			{{ form_widget(form.libelle, { 'attr':{'class':'form-control'} }) }}
+			<div class="input-group-btn">
+				{{ form_widget(form.icone, {'button_grid':{'':''}}) }} {# reset des données du bouton "icone" #}
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/iconset/bootstrap-iconpicker.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/iconset/daily-life.css') }}">
+	<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/categories/ajouter.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/fgsgestioncomptes/js/iconset/iconset-daily-life.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/fgsgestioncomptes/js/bootstrap-iconpicker.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/fgsgestioncomptes/js/categories/ajouter.js') }}"></script>
+{% endblock %}

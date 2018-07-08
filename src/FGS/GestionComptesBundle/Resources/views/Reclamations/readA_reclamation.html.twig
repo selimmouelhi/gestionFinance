@@ -1,0 +1,36 @@
+{% extends "FGSGestionComptesBundle::admin.html.twig" %}
+{% block title %}Reclamations{% endblock %}
+{% block big_title %}Reclamations :{% endblock %}
+{% block contenu %}
+    <table class="table">
+        <tr>
+            <th>User</th>
+            <th>Object</th>
+            <th>Content</th>
+            <th>Date</th>
+            <th>Etats</th>
+            <th></th>
+        </tr>
+        {% for reclamation in reclamations %}
+            <tr>
+                <td>{{ reclamation.utilisateur }}</td>
+                <td>{{ reclamation.objet }}</td>
+                <td>{{ reclamation.contenu }}</td>
+                <td>{{ reclamation.date|date("m/d/Y") }}</td>
+                <td>
+                    {% if reclamation.etat==0 %}
+                        <img src="{{ asset('images/abc.png') }}" alt="">
+                    {% endif %}
+                    {% if reclamation.etat==1 %}
+                        <img src="{{ asset('images/abc2.png') }}" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if reclamation.etat==0 %}
+                        <a href="{{ path('etat',{'id':reclamation.id}) }}">Resolve</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

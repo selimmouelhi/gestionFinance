@@ -1,0 +1,30 @@
+# This file is auto-generated during the composer install
+parameters:
+    #session
+    session_name: ma_petite_tirelire
+
+    #Database
+    database_host: 127.0.0.1
+    database_port: null
+    database_driver: pdo_mysql
+    database_name: banque
+    database_user: root
+    database_password: null
+    database_charset: UTF8
+    database_server_version: 5.5.42
+
+    #mail
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: ~
+    mailer_password: ~
+
+    #form
+    secret: '!!_Th1sIsTheB3stAwsomeP@ssw0rdEv3r_!!'
+
+    #fos
+    fos_user_bundle_from_adress: do-not-reply@ma-petite-tirelire.fr
+    fos_user_bundle_from_name: 'Do not reply'
+
+    #global
+    my_locale: en

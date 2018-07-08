@@ -1,0 +1,115 @@
+{% extends "FGSGestionComptesBundle::layout.html.twig" %}
+
+{% block title %}Visualisations des planifications{% endblock %}
+
+{% block modal %}
+<div class="modal" id="confirmation">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">x</button>
+			<h4 class="modal-title">Attention</h4>
+			</div>
+			<div class="modal-body">
+			<p>
+				Etes vous certains de vouloir supprimer le mouvement financier planifié  : <strong id="nom_mfp"></strong> rattaché au compte <strong id="nom_compte"></strong> ?
+			</p>
+			<p>
+				Cette Action ne pourra pas être annulé.
+			</p>
+			</div>
+			<div class="modal-footer">
+			<a class="btn btn-danger" id="valider_suppression" href="#">
+				<span class="glyphicon glyphicon-trash"></span> 
+				Supprimer ce mouvement
+			</a>
+			<a href="" class="btn btn-info" data-dismiss="modal" >
+				Annuler
+			</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block contenu %}
+	<h1 class="page-header">{% block titre_contenu %}Visualisations des planifications{% endblock %}</h1>
+
+	{% if liste_mouvements_financiers_planifies is empty %}
+	<div class="alert alert-warning alert-dismissible fade in" role="alert">
+		<p><span class="glyphicon glyphicon-warning-sign"></span> Vous n'avez pas encore ajouté de mouvement financier planifié.</p>
+	</div>
+	{% endif %}
+	
+	{% if liste_mouvements_financiers_planifies is not empty %}
+	
+		<table class="table table-striped ">
+			<thead>
+				<tr>
+					<th>
+						Nom du Compte
+					</th>
+					<th>
+						Libelle
+					</th>
+					<th>
+						Montant
+					</th>
+					<th>
+						Date Initiale
+					</th>
+					<th>
+						Récurence
+					</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for mouvementFinancierPlanifie in liste_mouvements_financiers_planifies %}
+				<tr>
+					<td>
+						<img src="{{ asset('img/'~mouvementFinancierPlanifie.compte.banque.urlImage) }}" class='logo-compte' />
+						{{ mouvementFinancierPlanifie.compte.nom }}
+					</td>
+					<td>{{ mouvementFinancierPlanifie.libelle }}</td>
+					<td>{{ mouvementFinancierPlanifie.montant }}</td>
+					<td>{{ mouvementFinancierPlanifie.dateInitiale|date("d/m/Y") }}</td>
+					<td>
+						{{ 'recurence.valeur'|transchoice(mouvementFinancierPlanifie.intervalValeur) }}
+						{{ mouvementFinancierPlanifie.intervalType|transchoice(mouvementFinancierPlanifie.intervalValeur) }}
+					</td>
+					<td>
+						<a href='{{ path('fgs_gestion_comptes_modifier_mouvements_planifies', {'id':mouvementFinancierPlanifie.id}) }}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-pencil'></span></a> 
+						{% include 'FGSGestionComptesBundle:MouvementsPlanifies:delete_button.html.twig' %}
+					</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	<hr class="col-xs-12"/>
+	<div class="row">
+		<div class="col-md-offset-3 col-md-3 col-xs-12">
+			<a href="{{ path('fgs_gestion_comptes_ajouter_depense_planifiee') }}" class="btn btn-warning btn-block">
+				<span class="glyphicon glyphicon-minus"></span> Ajouter une dépense planifiée
+			</a>
+		</div>
+		<div class="col-md-3 col-xs-12">
+			<a href="{{ path('fgs_gestion_comptes_ajouter_revenu_planifie') }}" class="btn btn-success btn-block">
+				<span class="glyphicon glyphicon-plus"></span> Ajouter un revenu planifiée
+			</a>
+		</div>
+	</div>	
+	{{- render(controller('FGSGestionComptesBundle:MouvementsPlanifies:genererFormDelete')) -}}
+{% endblock %}
+
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/mouvementsplanifies/visualiser.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src='{{ asset('bundles/fgsgestioncomptes/js/delete-mfp.js') }}'></script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "FGSGestionComptesBundle::layout.html.twig" %}
+
+{% block title %}Ajout d'un nouveau compte{% endblock %}
+
+{% block contenu %}
+
+<h1 class="page-header">{% block titre_contenu %}Ajout d'un nouveau Compte{% endblock %}</h1>
+
+	{{ form(form) }}
+
+{% endblock %}
