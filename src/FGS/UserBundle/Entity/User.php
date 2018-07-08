@@ -5,8 +5,9 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="FGS\UserBundle\Entity\UserRepository")
  * @ORM\Table(name="utilisateur")
+ *
  */
 class User extends BaseUser
 {
@@ -22,4 +23,22 @@ class User extends BaseUser
         parent::__construct();
 
     }
+
+    /**
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->enabled;
+    }
+
+    /**
+     * @param bool $enabled
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+    }
+
+
 }

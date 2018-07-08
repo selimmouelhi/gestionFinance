@@ -196,3 +196,12 @@ fgs_gestion_comptes_ajouterBanque:
 fgs_gestion_comptes_afficherBanques:
     path:     /admin/afficherBanque
     defaults: { _controller: FGSGestionComptesBundle:Banque:afficherBanque }
+fgs_gestion_comptes_afficher_Utilisateurs:
+    path:     /admin/afficherUsers
+    defaults: { _controller: FGSGestionComptesBundle:User:afficherAll }
+fgs_gestion_comptes_banir_Utilisateurs:
+    path:     /admin/banirUsers/{id}
+    defaults: { _controller: FGSGestionComptesBundle:User:Etat }
+fgs_gestion_comptes_Unbanir_Utilisateurs:
+    path:     /admin/UnbanirUsers/{id}
+    defaults: { _controller: FGSGestionComptesBundle:User:Etat2 }

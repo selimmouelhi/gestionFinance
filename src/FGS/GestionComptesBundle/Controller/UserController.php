@@ -10,21 +10,48 @@ namespace FGS\GestionComptesBundle\Controller;
 
 
 use FGS\UserBundle\Entity\User;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class UserController
+class UserController extends Controller
 {
 
 
 
     public function afficherAllAction(){
 
-
+        $roles="a:0:{}";
         $em = $this->getDoctrine();
-        $repository = $em->getRepository(User::class);
-        $reclamations = $repository->findAll();
-        return $this->render('FGSGestionComptesBundle:Banque:afficherBanque.html.twig', array(
+
+        $reclamations = $em->getRepository(User::class)->AllUsersDQL($roles);
+        return $this->render('FGSGestionComptesBundle:Users:afficherUsers.html.twig', array(
             'Users' => $reclamations
         ));
+    }
+
+    public function EtatAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $usr = $em->getRepository(User::class)->find($id);
+        $usr->setEnabled(0);
+        $em->persist($usr);
+        $em->flush();
+
+        return $this->redirecttoRoute("fgs_gestion_comptes_afficher_Utilisateurs");
+
+
+    }
+
+    public function Etat2Action($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $usr = $em->getRepository(User::class)->find($id);
+        $usr->setEnabled(1);
+        $em->persist($usr);
+        $em->flush();
+
+        return $this->redirecttoRoute("fgs_gestion_comptes_afficher_Utilisateurs");
+
+
     }
 
 }

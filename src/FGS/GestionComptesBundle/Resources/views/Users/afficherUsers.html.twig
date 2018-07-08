@@ -4,15 +4,21 @@
 {% block contenu %}
     <table class="table">
         <tr>
-            <th>Image Banque</th>
-            <th>Nom Banque</th>
-            <th>
+            <th>Nom utilisateur</th>
+            <th>Email</th>
+            <th></th>
         </tr>
-        {% for Banque in Banques %}
+        {% for User in Users %}
             <tr>
-                <td > <img width="100" height="100" src="{{ asset('img/'~ Banque.urlImage)}}" >
+                <td > {{ User.username }}
                 </td>
-                <td>{{ Banque.Nom }}</td>
+                <td>{{ User.email }}</td>
+                {% if User.enabled==1 %}
+                <td> <a href="{{ path('fgs_gestion_comptes_banir_Utilisateurs',{'id':User.id}) }}"> <span class="glyphicon glyphicon-remove"> Banir Utilisateur</span></a></td>
+            {% endif %}
+            {% if User.enabled==0 %}
+                <td> <a href="{{ path('fgs_gestion_comptes_Unbanir_Utilisateurs',{'id':User.id}) }}"> <span class="glyphicon glyphicon-remove"> Unban Utilisateur</span></a></td>
+            {% endif %}
 
             </tr>
 

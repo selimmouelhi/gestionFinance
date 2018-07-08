@@ -1,6 +1,6 @@
 <?php
 
-/* @FGSGestionComptes/Presentation/welcome.html.twig */
+/* FGSGestionComptesBundle:Presentation:welcome.html.twig */
 class __TwigTemplate_2661860a0a812ace9b2da0e52de5658abb2db56b5a8dc56fa3cbeea4ab38cc39 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_2661860a0a812ace9b2da0e52de5658abb2db56b5a8dc56fa3cbeea4ab3
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("FGSGestionComptesBundle::layout.html.twig", "@FGSGestionComptes/Presentation/welcome.html.twig", 1);
+        $this->parent = $this->loadTemplate("FGSGestionComptesBundle::layout.html.twig", "FGSGestionComptesBundle:Presentation:welcome.html.twig", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'contenu' => array($this, 'block_contenu'),
@@ -24,10 +24,10 @@ class __TwigTemplate_2661860a0a812ace9b2da0e52de5658abb2db56b5a8dc56fa3cbeea4ab3
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FGSGestionComptes/Presentation/welcome.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FGSGestionComptesBundle:Presentation:welcome.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FGSGestionComptes/Presentation/welcome.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FGSGestionComptesBundle:Presentation:welcome.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -143,7 +143,7 @@ class __TwigTemplate_2661860a0a812ace9b2da0e52de5658abb2db56b5a8dc56fa3cbeea4ab3
 
     public function getTemplateName()
     {
-        return "@FGSGestionComptes/Presentation/welcome.html.twig";
+        return "FGSGestionComptesBundle:Presentation:welcome.html.twig";
     }
 
     public function isTraitable()
@@ -218,6 +218,6 @@ class __TwigTemplate_2661860a0a812ace9b2da0e52de5658abb2db56b5a8dc56fa3cbeea4ab3
 </style>
 {% endblock %}
 
-", "@FGSGestionComptes/Presentation/welcome.html.twig", "C:\\wamp64\\www\\GestionComptes-master\\src\\FGS\\GestionComptesBundle\\Resources\\views\\Presentation\\welcome.html.twig");
+", "FGSGestionComptesBundle:Presentation:welcome.html.twig", "C:\\wamp64\\www\\GestionComptes-master\\src\\FGS\\GestionComptesBundle\\Resources\\views\\Presentation\\welcome.html.twig");
     }
 }

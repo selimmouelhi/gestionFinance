@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+        {%  include 'header/meta.html.twig' %}
+
+
+    {%  include 'header/favicon.html.twig' %}
+
+
+
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/fgsgestioncomptes/css/layout.css') }}">
     <link rel="icon" type="image/png" href={{ asset('img/icone.png') }}>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,7 +92,7 @@
                         <span>Utilisateurs</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="">Consulter Utilisateurs</a></li>
+                        <li><a href="{{ path('fgs_gestion_comptes_afficher_Utilisateurs') }}">Consulter Utilisateurs</a></li>
                     </ul>
                 </li>
 

@@ -618,15 +618,36 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'etat')), array (  '_controller' => 'FGS\\GestionComptesBundle\\Controller\\ReclamationController::EtatAction',));
         }
 
-        if (0 === strpos($pathinfo, '/admin/a')) {
-            // fgs_gestion_comptes_ajouterBanque
-            if ($pathinfo === '/admin/ajouterBanque') {
-                return array (  '_controller' => 'FGS\\GestionComptesBundle\\Controller\\BanqueController::ajouterBanqueAction',  '_route' => 'fgs_gestion_comptes_ajouterBanque',);
+        if (0 === strpos($pathinfo, '/admin')) {
+            if (0 === strpos($pathinfo, '/admin/a')) {
+                // fgs_gestion_comptes_ajouterBanque
+                if ($pathinfo === '/admin/ajouterBanque') {
+                    return array (  '_controller' => 'FGS\\GestionComptesBundle\\Controller\\BanqueController::ajouterBanqueAction',  '_route' => 'fgs_gestion_comptes_ajouterBanque',);
+                }
+
+                if (0 === strpos($pathinfo, '/admin/afficher')) {
+                    // fgs_gestion_comptes_afficherBanques
+                    if ($pathinfo === '/admin/afficherBanque') {
+                        return array (  '_controller' => 'FGS\\GestionComptesBundle\\Controller\\BanqueController::afficherBanqueAction',  '_route' => 'fgs_gestion_comptes_afficherBanques',);
+                    }
+
+                    // fgs_gestion_comptes_afficher_Utilisateurs
+                    if ($pathinfo === '/admin/afficherUsers') {
+                        return array (  '_controller' => 'FGS\\GestionComptesBundle\\Controller\\UserController::afficherAllAction',  '_route' => 'fgs_gestion_comptes_afficher_Utilisateurs',);
+                    }
+
+                }
+
             }
 
-            // fgs_gestion_comptes_afficherBanques
-            if ($pathinfo === '/admin/afficherBanque') {
-                return array (  '_controller' => 'FGS\\GestionComptesBundle\\Controller\\BanqueController::afficherBanqueAction',  '_route' => 'fgs_gestion_comptes_afficherBanques',);
+            // fgs_gestion_comptes_banir_Utilisateurs
+            if (0 === strpos($pathinfo, '/admin/banirUsers') && preg_match('#^/admin/banirUsers/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fgs_gestion_comptes_banir_Utilisateurs')), array (  '_controller' => 'FGS\\GestionComptesBundle\\Controller\\UserController::EtatAction',));
+            }
+
+            // fgs_gestion_comptes_Unbanir_Utilisateurs
+            if (0 === strpos($pathinfo, '/admin/UnbanirUsers') && preg_match('#^/admin/UnbanirUsers/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fgs_gestion_comptes_Unbanir_Utilisateurs')), array (  '_controller' => 'FGS\\GestionComptesBundle\\Controller\\UserController::Etat2Action',));
             }
 
         }

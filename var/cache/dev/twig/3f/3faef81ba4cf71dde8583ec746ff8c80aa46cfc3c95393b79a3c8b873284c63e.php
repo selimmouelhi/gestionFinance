@@ -1,6 +1,6 @@
 <?php
 
-/* @FGSGestionComptes/Banque/afficherBanque.html.twig */
+/* FGSGestionComptesBundle:Banque:afficherBanque.html.twig */
 class __TwigTemplate_c8aabb74b7ff97009a4e0f961ec5cfafb0b3c3d93498f3c21af9de8d9b94cd1b extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_c8aabb74b7ff97009a4e0f961ec5cfafb0b3c3d93498f3c21af9de8d9b9
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("FGSGestionComptesBundle::admin.html.twig", "@FGSGestionComptes/Banque/afficherBanque.html.twig", 1);
+        $this->parent = $this->loadTemplate("FGSGestionComptesBundle::admin.html.twig", "FGSGestionComptesBundle:Banque:afficherBanque.html.twig", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'big_title' => array($this, 'block_big_title'),
@@ -24,10 +24,10 @@ class __TwigTemplate_c8aabb74b7ff97009a4e0f961ec5cfafb0b3c3d93498f3c21af9de8d9b9
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FGSGestionComptes/Banque/afficherBanque.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FGSGestionComptesBundle:Banque:afficherBanque.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FGSGestionComptes/Banque/afficherBanque.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FGSGestionComptesBundle:Banque:afficherBanque.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -127,7 +127,7 @@ class __TwigTemplate_c8aabb74b7ff97009a4e0f961ec5cfafb0b3c3d93498f3c21af9de8d9b9
 
     public function getTemplateName()
     {
-        return "@FGSGestionComptes/Banque/afficherBanque.html.twig";
+        return "FGSGestionComptesBundle:Banque:afficherBanque.html.twig";
     }
 
     public function isTraitable()
@@ -170,6 +170,6 @@ class __TwigTemplate_c8aabb74b7ff97009a4e0f961ec5cfafb0b3c3d93498f3c21af9de8d9b9
 
         {% endfor %}
     </table>
-{% endblock %}", "@FGSGestionComptes/Banque/afficherBanque.html.twig", "C:\\wamp64\\www\\GestionComptes-master\\src\\FGS\\GestionComptesBundle\\Resources\\views\\Banque\\afficherBanque.html.twig");
+{% endblock %}", "FGSGestionComptesBundle:Banque:afficherBanque.html.twig", "C:\\wamp64\\www\\GestionComptes-master\\src\\FGS\\GestionComptesBundle\\Resources\\views\\Banque\\afficherBanque.html.twig");
     }
 }

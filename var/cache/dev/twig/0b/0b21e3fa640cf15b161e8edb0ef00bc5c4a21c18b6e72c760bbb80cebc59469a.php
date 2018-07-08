@@ -1,6 +1,6 @@
 <?php
 
-/* @FGSGestionComptes/admin.html.twig */
+/* FGSGestionComptesBundle::admin.html.twig */
 class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c2f685 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -19,17 +19,40 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FGSGestionComptes/admin.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FGSGestionComptesBundle::admin.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FGSGestionComptes/admin.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FGSGestionComptesBundle::admin.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
 <html lang=\"en\">
 <head>
+
+        ";
+        // line 5
+        $this->loadTemplate("header/meta.html.twig", "FGSGestionComptesBundle::admin.html.twig", 5)->display($context);
+        // line 6
+        echo "
+
+    ";
+        // line 8
+        $this->loadTemplate("header/favicon.html.twig", "FGSGestionComptesBundle::admin.html.twig", 8)->display($context);
+        // line 9
+        echo "
+
+
+
+    <link rel=\"stylesheet\" href=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/fgsgestioncomptes/css/layout.css"), "html", null, true);
+        echo "\">
     <link rel=\"icon\" type=\"image/png\" href=";
-        // line 4
+        // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/icone.png"), "html", null, true);
         echo ">
     <meta charset=\"utf-8\">
@@ -39,49 +62,49 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
     <meta name=\"keyword\" content=\"Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina\">
 
     <title>JMLESSOUS - ";
-        // line 11
+        // line 22
         $this->displayBlock('big_title', $context, $blocks);
         echo "</title>
     <link rel=\"shortcut icon\" type=\"image/x-icon\" href=";
-        // line 12
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/icone.png"), "html", null, true);
         echo "/>
 
     <!-- Bootstrap core CSS -->
     <link href=";
-        // line 15
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css1/bootstrap.css"), "html", null, true);
         echo " rel=\"stylesheet\">
     <!--external css-->
     <link href=";
-        // line 17
+        // line 28
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("font-awesome/css/font-awesome.css"), "html", null, true);
         echo " rel=\"stylesheet\"/>
     <link rel=\"stylesheet\" type=\"text/css\" href=";
-        // line 18
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css1/zabuto_calendar.css"), "html", null, true);
         echo ">
     <link rel=\"stylesheet\" type=\"text/css\" href=";
-        // line 19
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/gritter/css/jquery.gritter.css"), "html", null, true);
         echo "/>
     <link rel=\"stylesheet\" type=\"text/css\" href=";
-        // line 20
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lineicons/style.css"), "html", null, true);
         echo ">
 
     <!-- Custom styles for this template -->
     <link href=";
-        // line 23
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css1/style.css"), "html", null, true);
         echo " rel=\"stylesheet\">
     <link href=";
-        // line 24
+        // line 35
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css1/style-responsive.css"), "html", null, true);
         echo " rel=\"stylesheet\">
 
     <script src=";
-        // line 26
+        // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/chart-master/Chart.js"), "html", null, true);
         echo "></script>
 
@@ -112,7 +135,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
         <div class=\"top-menu\">
             <ul class=\"nav pull-right top-menu\">
                 <li><a class=\"logout\" href= \"";
-        // line 54
+        // line 65
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fgs_gestion_comptes_home");
         echo "\"> Logout</a></li>
             </ul>
@@ -130,7 +153,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
             <ul class=\"sidebar-menu\" id=\"nav-accordion\">
 
                 <p class=\"centered\"><a href=\"profile.html\"><img src=";
-        // line 69
+        // line 80
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/icone.png"), "html", null, true);
         echo " width=\"100\"></a>
                 </p>
@@ -147,7 +170,10 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
                         <span>Utilisateurs</span>
                     </a>
                     <ul class=\"sub\">
-                        <li><a href=\"\">Consulter Utilisateurs</a></li>
+                        <li><a href=\"";
+        // line 95
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fgs_gestion_comptes_afficher_Utilisateurs");
+        echo "\">Consulter Utilisateurs</a></li>
                     </ul>
                 </li>
 
@@ -158,11 +184,11 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
                     </a>
                     <ul class=\"sub\">
                         <li><a href=\"";
-        // line 94
+        // line 105
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fgs_gestion_comptes_ajouterBanque");
         echo "\">Ajouter Banque</a></li>
                         <li><a href=\"";
-        // line 95
+        // line 106
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fgs_gestion_comptes_afficherBanques");
         echo "\">Consulter Banques</a></li>
                     </ul>
@@ -174,7 +200,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
                     </a>
                     <ul class=\"sub\">
                         <li><a href=\"";
-        // line 104
+        // line 115
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("lire_reclamations");
         echo "\">Reclamations</a></li>
                     </ul>
@@ -199,14 +225,14 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
                 <div class=\"col-lg-12\">
                     <div class=\"form-panel\">
                         <h4 class=\"mb\"><i class=\"fa fa-angle-right\"></i> ";
-        // line 126
+        // line 137
         $this->displayBlock('title', $context, $blocks);
         echo "</h4>
 
                         ";
-        // line 128
+        // line 139
         $this->displayBlock('contenu', $context, $blocks);
-        // line 129
+        // line 140
         echo "
                     </div><!-- /form-panel -->
                 </div><!-- /col-lg-12 -->
@@ -220,49 +246,49 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
 
 <!-- js placed at the end of the document so the pages load faster -->
 <script src=";
-        // line 141
+        // line 152
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/jquery.js"), "html", null, true);
         echo "></script>
 <script src=";
-        // line 142
+        // line 153
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/jquery-1.8.3.min.js"), "html", null, true);
         echo "></script>
 <script src=";
-        // line 143
+        // line 154
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/bootstrap.min.js"), "html", null, true);
         echo "></script>
 <script class=\"include\" type=\"text/javascript\" src=";
-        // line 144
+        // line 155
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/jquery.dcjqaccordion.2.7.js"), "html", null, true);
         echo "></script>
 <script src=";
-        // line 145
+        // line 156
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/jquery.scrollTo.min.js"), "html", null, true);
         echo "></script>
 <script src=";
-        // line 146
+        // line 157
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/jquery.nicescroll.js"), "html", null, true);
         echo " type=\"text/javascript\"></script>
 <script src=";
-        // line 147
+        // line 158
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/jquery.sparkline.js"), "html", null, true);
         echo "></script>
 
 
 <!--common script for all pages-->
 <script src=";
-        // line 151
+        // line 162
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/common-scripts.js"), "html", null, true);
         echo "></script>
 
 
 <!--script for this page-->
 <script src=";
-        // line 155
+        // line 166
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js1/sparkline-chart.js"), "html", null, true);
         echo "></script>
 <script src=";
-        // line 156
+        // line 167
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/zabuto_calendar.js"), "html", null, true);
         echo "></script>
 
@@ -275,7 +301,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
             text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href=\"http://blacktie.co\" target=\"_blank\" style=\"color:#ffd777\">BlackTie.co</a>.',
             // (string | optional) the image to display on the left
             image: ";
-        // line 166
+        // line 177
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/ui-sam.jpg"), "html", null, true);
         echo ",
             // (bool | optional) if you want it to fade out on its own or just sit there
@@ -337,7 +363,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
 
     }
 
-    // line 11
+    // line 22
     public function block_big_title($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -354,7 +380,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
 
     }
 
-    // line 126
+    // line 137
     public function block_title($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -371,7 +397,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
 
     }
 
-    // line 128
+    // line 139
     public function block_contenu($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -390,7 +416,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
 
     public function getTemplateName()
     {
-        return "@FGSGestionComptes/admin.html.twig";
+        return "FGSGestionComptesBundle::admin.html.twig";
     }
 
     public function isTraitable()
@@ -400,7 +426,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
 
     public function getDebugInfo()
     {
-        return array (  375 => 128,  358 => 126,  341 => 11,  279 => 166,  266 => 156,  262 => 155,  255 => 151,  248 => 147,  244 => 146,  240 => 145,  236 => 144,  232 => 143,  228 => 142,  224 => 141,  210 => 129,  208 => 128,  203 => 126,  178 => 104,  166 => 95,  162 => 94,  134 => 69,  116 => 54,  85 => 26,  80 => 24,  76 => 23,  70 => 20,  66 => 19,  62 => 18,  58 => 17,  53 => 15,  47 => 12,  43 => 11,  33 => 4,  28 => 1,);
+        return array (  401 => 139,  384 => 137,  367 => 22,  305 => 177,  292 => 167,  288 => 166,  281 => 162,  274 => 158,  270 => 157,  266 => 156,  262 => 155,  258 => 154,  254 => 153,  250 => 152,  236 => 140,  234 => 139,  229 => 137,  204 => 115,  192 => 106,  188 => 105,  175 => 95,  157 => 80,  139 => 65,  108 => 37,  103 => 35,  99 => 34,  93 => 31,  89 => 30,  85 => 29,  81 => 28,  76 => 26,  70 => 23,  66 => 22,  56 => 15,  52 => 14,  48 => 13,  42 => 9,  40 => 8,  36 => 6,  34 => 5,  28 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -416,6 +442,17 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
         return new Twig_Source("<!DOCTYPE html>
 <html lang=\"en\">
 <head>
+
+        {%  include 'header/meta.html.twig' %}
+
+
+    {%  include 'header/favicon.html.twig' %}
+
+
+
+
+    <link rel=\"stylesheet\" href=\"{{ asset('css/bootstrap.min.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('bundles/fgsgestioncomptes/css/layout.css') }}\">
     <link rel=\"icon\" type=\"image/png\" href={{ asset('img/icone.png') }}>
     <meta charset=\"utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
@@ -496,7 +533,7 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
                         <span>Utilisateurs</span>
                     </a>
                     <ul class=\"sub\">
-                        <li><a href=\"\">Consulter Utilisateurs</a></li>
+                        <li><a href=\"{{ path('fgs_gestion_comptes_afficher_Utilisateurs') }}\">Consulter Utilisateurs</a></li>
                     </ul>
                 </li>
 
@@ -629,6 +666,6 @@ class __TwigTemplate_feebd30feb4b5b4f64292fe58d81ba58d264c4c9502d5ced5de2f7d983c
 
 </body>
 </html>
-", "@FGSGestionComptes/admin.html.twig", "C:\\wamp64\\www\\GestionComptes-master\\src\\FGS\\GestionComptesBundle\\Resources\\views\\admin.html.twig");
+", "FGSGestionComptesBundle::admin.html.twig", "C:\\wamp64\\www\\GestionComptes-master\\src\\FGS\\GestionComptesBundle\\Resources\\views\\admin.html.twig");
     }
 }
